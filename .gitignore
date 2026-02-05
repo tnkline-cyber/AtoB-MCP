@@ -18,22 +18,36 @@ quick-test*.js
 
 # Internal documentation
 SYSTEM_CONSTRAINTS.md
+CONSTRAINTS_*.md
 IMPLEMENTATION_*.md
 PHASE_*.md
 *_REPORT.md
 *_COMPLETE*.md
 *_GUIDE.md
+*_INSTRUCTIONS.md
+*_SUCCESS.md
 SESSION_SUMMARY.md
 FINAL_*.md
 GIT_COMMIT_CHECKLIST.md
 BRAIN_CORE_*.md
 GOLD_PERSONA_*.md
 DYNAMIC_PERSONA_*.md
+API_KEY_*.md
+PERSONA_*.md
+GITHUB_*.md
+test-mcp-live.md
 
 # Scripts
 save-learnings*.js
 register-all-personas.js
 migrate*.js
+
+# Database schema (proprietary)
+schema.sql
+
+# Root package files (use public-package.json instead)
+/package.json
+/package-lock.json
 
 # Sensitive data and configs
 .env
