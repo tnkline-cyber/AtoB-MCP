@@ -64,7 +64,7 @@ AtoB-MCP transforms AI interactions by integrating sophisticated processing laye
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/[username]/AtoB-MCP.git
+git clone https://github.com/[tnkline-cyber]/AtoB-MCP.git
 cd AtoB-MCP
 ```
 
