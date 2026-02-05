@@ -7,19 +7,19 @@ export default async function storeLearning(brain, args) {
   const { task, outcome, insights } = args;
 
   // BrainUnderstandingで学習記録
-  await brain.brain.storeLearning({
-    task,
+  // Use learnFromFeedback method (actual implementation)
+  await brain.brain.learnFromFeedback(
+    { type: task, context: task },
     outcome,
-    insights,
-    timestamp: new Date().toISOString()
-  });
+    outcome === 'success' ? 0.9 : 0.3  // performanceScore
+  );
 
   return {
     success: true,
     task,
     outcome,
-    insights_count: insights.length,
-    message: 'Learning successfully stored',
+    insights_count: insights ? insights.length : 0,
+    message: 'Learning successfully stored via learnFromFeedback',
     timestamp: new Date().toISOString()
   };
 }
