@@ -50,7 +50,7 @@ const dbPath = path.resolve(__dirname, '../atob-brain.db');
 const brain = new IntegratedBrain(dbPath);
 await brain.initialize();
 
-console.error('✅ atob-system MCP Server: IntegratedBrain initialized');
+console.error('atob-system MCP Server: IntegratedBrain initialized');
 
 // Create MCP Server
 const server = new Server(
@@ -283,4 +283,4 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 const transport = new StdioServerTransport();
 await server.connect(transport);
 
-console.error('🚀 atob-system MCP Server running');
+console.error('atob-system MCP Server running');
