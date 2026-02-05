@@ -18,12 +18,12 @@ async function updatePersonas() {
         return;
       }
       
-      console.log('✅ Database connected');
+      console.log('Database connected');
       
       // Read all persona files
       const personaFiles = fs.readdirSync(personasDir).filter(f => f.endsWith('.json'));
       
-      console.log(`\n📂 Found ${personaFiles.length} persona files:\n`);
+      console.log(`\nFound ${personaFiles.length} persona files:\n`);
       
       let processed = 0;
       
@@ -35,18 +35,18 @@ async function updatePersonas() {
         const isBase = personaData.is_base_persona ? 1 : 0;
         const config = JSON.stringify(personaData.persona_config);
         
-        console.log(`🔄 Updating: ${taskType} (base: ${isBase})`);
+        console.log(`Updating: ${taskType} (base: ${isBase})`);
         
         db.run(
           'UPDATE personas SET persona_config = ?, is_base_persona = ?, updated_at = CURRENT_TIMESTAMP WHERE task_type = ?',
           [config, isBase, taskType],
           function(err) {
             if (err) {
-              console.error(`❌ Error updating ${taskType}:`, err.message);
+              console.error(`Error updating ${taskType}:`, err.message);
             } else if (this.changes === 0) {
-              console.log(`   ℹ️  Not found in DB, skipping: ${taskType}`);
+              console.log(`   Not found in DB, skipping: ${taskType}`);
             } else {
-              console.log(`   ✅ Updated: ${taskType}`);
+              console.log(`   Updated: ${taskType}`);
             }
             
             processed++;
@@ -59,13 +59,13 @@ async function updatePersonas() {
                   return;
                 }
                 
-                console.log('\n📊 Database state after update:\n');
+                console.log('\nDatabase state after update:\n');
                 rows.forEach(row => {
                   console.log(`   ${row.task_type}: base=${row.is_base_persona}, updated=${row.updated_at}`);
                 });
                 
                 db.close();
-                console.log('\n✅ All personas updated successfully');
+                console.log('\nAll personas updated successfully');
                 resolve();
               });
             }
