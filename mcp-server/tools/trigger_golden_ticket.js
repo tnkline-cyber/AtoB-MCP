@@ -4,10 +4,13 @@
  */
 
 export default async function triggerGoldenTicket(brain, args) {
-  const { task, context = {} } = args;
+  const { task, context = {}, test_mode = false } = args;
+
+  // Add test_mode to context if specified
+  const executionContext = { ...context, test_mode };
 
   // Golden Boostプロセス実行
-  const result = await brain.goldenTicketSystem.executeGoldenBoost(task, context);
+  const result = await brain.goldenTicketSystem.executeGoldenBoost(task, executionContext);
 
   return {
     task,

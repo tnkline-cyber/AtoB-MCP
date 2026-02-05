@@ -14,8 +14,8 @@ export default async function generatePersona(brain, args) {
   const { task_description, genre } = args;
 
   // PersonaManager経由でペルソナ生成
-  const PersonaManager = (await import(path.resolve(__dirname, '../../lib/persona-manager.js'))).default;
-  const personaManager = new PersonaManager(path.resolve(__dirname, '../../atob-brain.db'));
+  const { PersonaManager } = await import(path.resolve(__dirname, '../../lib/persona-manager.js'));
+  const personaManager = new PersonaManager();
   await personaManager.initialize();
 
   const persona = await personaManager.getPersona(task_description, { genre });

@@ -170,6 +170,10 @@ const tools = [
           type: 'object',
           description: 'コンテキスト情報',
         },
+        test_mode: {
+          type: 'boolean',
+          description: 'テストモード（trueの場合は簡易実行）',
+        },
       },
       required: ['task'],
     },
