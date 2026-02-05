@@ -1,0 +1,59 @@
+# Core implementation (proprietary)
+brain-core/
+personas/
+lib/
+data/
+backup/
+migration/
+
+# Database files
+*.db
+*.sqlite
+*.db-journal
+
+# Tests and internal files
+test-*.js
+quick-test*.js
+*-test.js
+
+# Internal documentation
+SYSTEM_CONSTRAINTS.md
+IMPLEMENTATION_*.md
+PHASE_*.md
+*_REPORT.md
+*_COMPLETE*.md
+*_GUIDE.md
+SESSION_SUMMARY.md
+FINAL_*.md
+GIT_COMMIT_CHECKLIST.md
+BRAIN_CORE_*.md
+GOLD_PERSONA_*.md
+DYNAMIC_PERSONA_*.md
+
+# Scripts
+save-learnings*.js
+register-all-personas.js
+migrate*.js
+
+# Sensitive data and configs
+.env
+*.log
+*.key
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
